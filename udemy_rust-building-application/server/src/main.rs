@@ -1,9 +1,9 @@
-use http::Request;
 use http::Method;
-use server::Server;
+use http::Request;
+use server::Server; // use server struct via mod server
 
-mod server;
-mod http;
+mod http; // copy http modules in http/mod.rs
+mod server; // copy server.rs
 
 fn main() {
     let server = Server::new("127.0.0.1:8080".to_string());
