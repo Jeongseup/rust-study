@@ -17,6 +17,20 @@ pub struct Request<'buf> {
     method: Method,
 }
 
+impl<'buf> Request<'buf> {
+    pub fn path(&self) -> &str {
+        &self.path
+    }
+
+    pub fn method(&self) -> &Method {
+        &self.method
+    }
+
+    pub fn query_string(&self) -> Option<&QueryString> {
+        self.query_string.as_ref()
+    }
+}
+
 // trait
 // impl<'buf> is declare which means we are going to use lifetime in this implement
 // TryFrom<&'buf [u8]> is a signature for using buf lifetime into this specific function
