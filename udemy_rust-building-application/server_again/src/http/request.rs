@@ -19,7 +19,7 @@ pub struct Request<'buf> {
 
 impl<'buf> Request<'buf> {
     pub fn path(&self) -> &str {
-        &self.path
+        self.path
     }
 
     pub fn method(&self) -> &Method {
